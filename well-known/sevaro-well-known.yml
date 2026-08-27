@@ -1,0 +1,41 @@
+generated: '2026-08-27'
+method: probed
+source: https://sevaro.com/.well-known/
+note: >-
+  Every /.well-known/ path probed on sevaro.com returned HTTP 404 (the WordPress theme 404 page,
+  124,206 bytes of HTML). No discovery document is served. api.sevaro.com, developer.sevaro.com and
+  docs.sevaro.com do not resolve in DNS, so there is no API host to probe. NO WellKnown or SecurityTxt
+  pointer is emitted in apis.yml — this file records a measured absence, not a served surface.
+hit_count: 0
+hosts:
+- host: https://sevaro.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+soft_404_control:
+  path: /.well-known/this-should-404-xyz
+  status: 404
+  bytes: 124206
+  finding: >-
+    The control path returns the same 404 status and the same 124,206-byte body as every named
+    /.well-known/ path, confirming the host is not a soft-200 catch-all and that the negatives above
+    are true negatives.
+unresolved_hosts:
+- host: api.sevaro.com
+  status: <no dns>
+- host: developer.sevaro.com
+  status: <no dns>
+- host: docs.sevaro.com
+  status: <no dns>

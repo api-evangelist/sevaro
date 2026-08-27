@@ -1,0 +1,18 @@
+generated: '2026-08-27'
+method: searched
+source: https://sevaro.com/contact-us/
+plan_count: 0
+note: >-
+  Sevaro publishes no pricing at all. The page sitemap (https://sevaro.com/page-sitemap.xml, HTTP 200)
+  contains no pricing or plans page, and every commercial call-to-action on the site ("Get Demo",
+  https://sevaro.com/get-demo/) 301s to the contact form at https://sevaro.com/contact-us/. Sevaro
+  sells virtual neurology service contracts to hospitals through a sales motion; there is no
+  self-serve tier, no published rate, and no API product to price.
+plans: []
+evidence:
+- url: https://sevaro.com/page-sitemap.xml
+  status: 200
+  finding: no pricing or plans page listed
+- url: https://sevaro.com/get-demo/
+  status: 200
+  finding: redirects to https://sevaro.com/contact-us/

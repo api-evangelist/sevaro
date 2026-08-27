@@ -1,0 +1,58 @@
+generated: '2026-08-27'
+method: searched
+source: https://sevaro.com/synapse-ai/
+note: >-
+  Assessed against the health-sector standards shortlist. Sevaro publishes no machine-readable
+  contract and makes no public conformance or certification claim, so every entry below is a
+  measured negative with the URL it was measured against. REWARD-ONLY rubric: nothing is invented to
+  fill a slot, and NO Compliance pointer is emitted in apis.yml because no certification or
+  compliance program is published. Sevaro is a US clinical services provider and is a HIPAA covered
+  entity/business associate as a matter of law, but it publishes no HIPAA attestation, BAA summary,
+  SOC 2 report, HITRUST certification or trust center, so that regulatory status is not recorded here
+  as a published conformance.
+surfaces:
+  openapi: none
+  graphql: none
+  asyncapi: none
+  mcp: none
+  a2a: none
+  wsdl: none
+  grpc: none
+conformance:
+- id: fhir
+  conforms: false
+  evidence: >-
+    No FHIR resource, endpoint, CapabilityStatement or SMART-on-FHIR surface appears anywhere on
+    sevaro.com. The Synapse AI product page (https://sevaro.com/synapse-ai/, HTTP 200) markets
+    "Integrations" and EMR/EHR connectivity as a service capability but names no standard, no
+    interface and no contract; the only literal "api" strings on that page are
+    fonts.googleapis.com stylesheet URLs.
+- id: hl7v2
+  conforms: false
+  evidence: >-
+    No HL7 v2 message types, interface specification or integration guide is published on any Sevaro
+    host or in the SevaroHealth GitHub organization.
+- id: smart-on-fhir
+  conforms: false
+  evidence: No SMART App Launch or OAuth authorization surface is published; /.well-known/oauth-authorization-server returns 404.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    https://sevaro.com/.well-known/oauth-authorization-server returns 404 and no OAuth documentation
+    exists. The customer portal (portal.sevaro.com) is a Salesforce Experience Cloud site whose own
+    authorization surface is Salesforce's, not Sevaro's.
+- id: oidc
+  conforms: false
+  evidence: https://sevaro.com/.well-known/openid-configuration returns 404.
+- id: rfc9457
+  conforms: false
+  evidence: No API and therefore no error envelope to assess.
+- id: rfc9116
+  conforms: false
+  evidence: https://sevaro.com/.well-known/security.txt returns 404.
+domain_standard:
+  detected: false
+  note: >-
+    No domain-standard signature (FHIR resource URN, HL7 message type, X12 transaction set, SMART
+    launch, or OAI-PMH verb) is present, because there is no contract to carry one. Not penalised —
+    Sevaro publishes no contract at all.

@@ -1,0 +1,45 @@
+generated: '2026-08-27'
+method: searched
+source: https://status.sevaro.com/
+note: >-
+  Sevaro publishes no API, so there is no API versioning, deprecation or sunset policy to record.
+  What it does operate is a public Atlassian Statuspage covering its clinical product surfaces, which
+  is the only lifecycle signal the company publishes.
+status_page:
+  url: https://status.sevaro.com/
+  provider: Atlassian Statuspage
+  http_status: 200
+  machine_readable:
+  - url: https://status.sevaro.com/api/v2/summary.json
+    status: 200
+  - url: https://status.sevaro.com/api/v2/components.json
+    status: 200
+  page_id: jgpxpn3ytmj2
+  page_name: Sevaro Health
+  time_zone: America/New_York
+  observed: '2026-08-27'
+  components:
+  - name: Sevaro Video
+    status: operational
+  - name: Synapse Analytics
+    status: operational
+  - name: Synapse for Providers
+    status: operational
+  - name: OneCall
+    status: operational
+  - name: Synapse Mobile App
+    status: operational
+versioning:
+  policy_published: false
+  note: No public API and no published versioning scheme.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  note: >-
+    No deprecation or sunset policy is published. No Deprecation pointer is emitted in apis.yml
+    because none exists to point at.
+sla:
+  published: false
+  note: >-
+    No public SLA document was found on sevaro.com; service levels for hospital customers are
+    presumably contractual and not published.
